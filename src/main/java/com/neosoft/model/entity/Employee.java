@@ -6,9 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
-
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,6 +14,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Employee {
 
     private String id;
+
+    private String employeeId;
 
     private String employeeName;
 

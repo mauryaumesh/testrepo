@@ -1,7 +1,7 @@
 package com.neosoft.controller;
 
 import com.neosoft.model.entity.Employee;
-import com.neosoft.repository.EmployeeRepo;
+import com.neosoft.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.*;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeRepo employeeRepo;
+    private EmployeeService employeeService;
 
 
     @PostMapping("/add")
     public ResponseEntity<?> addEmployee(@RequestBody Employee employee){
-       Employee save = this.employeeRepo.save(employee);
+       Employee save = this.employeeService.saveEmployee(employee);
        return ResponseEntity.ok(save);
     }
 
     @GetMapping("/get")
     public ResponseEntity<?> getEmployee(){
-        return ResponseEntity.ok(this.employeeRepo.findAll());
+        return ResponseEntity.ok(this.employeeService.getAllEmployee());
     }
 
 }
