@@ -30,6 +30,7 @@ public class Employee {
 
 
     private Integer age;
+    private String yusuf;
 
     private String myAddress;
 
