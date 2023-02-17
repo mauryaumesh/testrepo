@@ -33,6 +33,7 @@ public class Employee {
 
     private String myAddress;
 
+    private boolean active;
 
 
 
