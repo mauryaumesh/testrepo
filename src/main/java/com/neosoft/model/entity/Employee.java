@@ -31,6 +31,8 @@ public class Employee {
 
     private Integer age;
 
+    private boolean active;
+
 
 
 
