@@ -26,9 +26,6 @@ public class Employee {
     private Integer age;
     private boolean active;
 
-    private String Bheem;
-    private String Raju;
-
 
 
 
