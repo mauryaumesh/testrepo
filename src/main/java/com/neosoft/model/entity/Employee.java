@@ -28,12 +28,16 @@ public class Employee {
 
     private String phoneNo;
 
+
     private Integer age;
     private String yusuf;
 
     private String myAddress;
 
     private boolean active;
+
+    private String Bheem;
+    private String Raju;
 
 
 
