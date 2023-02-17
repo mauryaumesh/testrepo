@@ -29,12 +29,6 @@ public class Employee {
     private String phoneNo;
 
 
-    private String myAddress;
-
-
-    Long test;
-
-
 
 
 
