@@ -29,6 +29,8 @@ public class Employee {
     private String phoneNo;
 
 
+    private Integer age;
+
     private String myAddress;
 
 
