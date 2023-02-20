@@ -1,9 +1,17 @@
 package com.neosoft.service;
 
 
-import org.springframework.stereotype.Service;
+import com.neosoft.model.entity.Employee;
 
+import java.util.List;
+import java.util.Optional;
 
-public class EmployeeService {
+public interface EmployeeService {
+
+    Employee saveEmployee(Employee employee);
+    List<Employee> getAllEmployee();
+    Optional<Employee> getEmployeeById(String employeeId);
+    void deleteEmployee(String employeeId);
+    Employee updateEmployeeByID(Employee employee,String employeeId);
 
 }
