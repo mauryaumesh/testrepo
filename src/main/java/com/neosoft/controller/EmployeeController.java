@@ -25,4 +25,23 @@ public class EmployeeController {
         return ResponseEntity.ok(this.employeeService.getAllEmployee());
     }
 
+    @GetMapping("/get/{employeeId}")
+    public ResponseEntity<?> getEmployeeById(@PathVariable String employeeId){
+        return ResponseEntity.ok(this.employeeService.getEmployeeById(employeeId));
+    }
+
+    @GetMapping("/getByName/{employeeName}")
+    public ResponseEntity<?> getEmployeeByName(@PathVariable String employeeName){
+        return ResponseEntity.ok(this.employeeService.getEmployeeByName(employeeName));
+    }
+
+    @GetMapping("/getAllByName/{employeeName}")
+    public ResponseEntity<?> getAllEmployeeByName(@PathVariable String employeeName){
+        return ResponseEntity.ok(this.employeeService.getAllEmployeeByName(employeeName));
+    }
+
+    @PutMapping("/update/{employeeId}")
+    public ResponseEntity<?> updateEmployee(@PathVariable String employeeId,@RequestBody Employee employee){
+        return  ResponseEntity.ok(this.employeeService.updateEmployeeByID(employee,employeeId));
+    }
 }

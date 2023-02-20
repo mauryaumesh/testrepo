@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -26,20 +25,30 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Optional<Employee> getEmployeeById(String employeeId) {
-        return employeeRepo.findById(employeeId);
+    public Employee getEmployeeById(String employeeId) {
+        return employeeRepo.findByEmployeeId(employeeId);
     }
 
     @Override
-    public void deleteEmployee(String employeeId) {
-        employeeRepo.deleteById(employeeId);
+    public Employee getEmployeeByName(String employeeName) {
+        return employeeRepo.findByEmployeeName(employeeName);
+    }
+
+    @Override
+    public List<Employee> getAllEmployeeByName(String employeeName) {
+        return employeeRepo.findAllByEmployeeName(employeeName);
+    }
+
+    @Override
+    public void deleteEmployeeById(String employeeId) {
+        employeeRepo.deleteByEmployeeId(employeeId);
     }
 
     @Override
     public Employee updateEmployeeByID(Employee employee,String employeeId) {
 
-       Optional<Employee> emp = employeeRepo.findById(employeeId);
-        employee.setEmployeeId(emp.get().getEmployeeId());
+       Employee emp = employeeRepo.findByEmployeeId(employeeId);
+        employee.setEmployeeId(emp.getEmployeeId());
         return employeeRepo.save(employee);
     }
 }
